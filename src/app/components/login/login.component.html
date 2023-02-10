@@ -1,0 +1,42 @@
+<br />
+<div class="parent">
+  <div class="form">
+    <div class="card" style="width: 24rem;">
+      <div class="card-body">
+        <form>
+          <h1>Ingresar al Sistema</h1>
+          <hr />
+          <div class="mb-3 form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="text"
+              name="email"
+              id="name"
+              [(ngModel)]="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="mb-3 form-group">
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              class="text"
+              name="password"
+              id="password"
+              [(ngModel)]="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="list-group">
+            <button type="button" class="btn button-login" (click)="login()">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
