@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ export class RegisterComponent {
   password: string;
   passwordConfirm: string;
 
-  constructor() {
+  constructor(private _login: LoginService) {
     this.email = '';
     this.password = '';
     this.passwordConfirm = '';
@@ -20,5 +21,16 @@ export class RegisterComponent {
     console.log(this.email);
     console.log(this.password);
     console.log(this.passwordConfirm);
+    if (this.password == this.passwordConfirm) {
+      const user = {
+        email: this.email,
+        password: this.passwordConfirm,
+      };
+      this._login.registerUser(user).subscribe((data) => {
+        console.log(data);
+      });
+    } else {
+      console.warn('La contraseña no coincide');
+    }
   }
 }

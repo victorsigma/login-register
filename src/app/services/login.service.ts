@@ -12,6 +12,6 @@ export class LoginService {
   }
 
   registerUser(user: any) {
-    return this.http.post(this.myAppUrl + 'api/regiter/', user);
+    return this.http.post(this.myAppUrl + 'api/register/', user);
   }
 }
