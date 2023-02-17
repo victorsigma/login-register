@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class LoginComponent {
   email: string;
   password: string;
 
-  constructor(private _login: LoginService) {
+  constructor(private _login: LoginService, private router: Router) {
     this.email = '';
     this.password = '';
   }
