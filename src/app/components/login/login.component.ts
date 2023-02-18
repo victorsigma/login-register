@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent {
   email: string;
   password: string;
 
-  constructor(private _login: LoginService, private router: Router) {
+  constructor(private _login: LoginService, private toastr: ToastrService) {
     this.email = '';
     this.password = '';
   }
@@ -23,8 +24,9 @@ export class LoginComponent {
       email: this.email,
       password: this.password,
     };
-    this._login.loginUser(user).subscribe((data) => {
+    this._login.loginUser(user).subscribe((data: any) => {
       console.log(data);
+      this.toastr.info(data.token);
     });
   }
 }

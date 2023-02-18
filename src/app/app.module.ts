@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AccordionModule } from 'primeng/accordion'; //accordion and accordion tab
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     AccordionModule,
     HttpClientModule,
+    ToastrModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
