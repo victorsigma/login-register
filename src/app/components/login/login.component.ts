@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../services/login.service';
 
@@ -25,8 +24,7 @@ export class LoginComponent {
       password: this.password,
     };
     this._login.loginUser(user).subscribe((data: any) => {
-      console.log(data);
-      this.toastr.info(data.token);
+      this.toastr.info('Token: ' + data.token);
     });
   }
 }
